@@ -1,0 +1,461 @@
+﻿@import url(sanitize.css);
+
+body {
+}
+
+/*******************
+*  見出し
+*******************/
+
+.title {
+    padding-top: 10%;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+    /*下からフェードイン*/
+    animation-name: H1fadeUpAnime;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.title h1 {
+    font-size: 100px;
+}
+
+.title h2 {
+    padding-top: 1%;
+    font-size: 50px;
+}
+
+/*アニメーション設定*/
+@keyframes H1fadeUpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*******************
+*  プロフィール
+*******************/
+
+.profile-outer {
+    background-color: #dddddd;
+    width: 100%;
+    margin-top: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    display: flex; /*中身をflex指定*/
+    flex-direction: column; /*子を縦に並べる*/
+    justify-content: space-around;
+}
+
+.profile-outer h2 {
+    text-align: center;
+    font-size: 40px;
+}
+
+.profile-area {
+    width: 100%;
+    height: 100%;
+    margin-top: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /*フェードする際に、透明な状態から始める*/
+    opacity: 0;
+}
+
+.icons {
+    width: 30%;
+    padding-left: 10%;
+    /*縦列、右上から配置*/
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.icons img:nth-child(1) {
+    width: 150px;
+    height: 150px;
+    margin-left: 10%;
+    margin-bottom: 50%;
+}
+
+.icons img:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    margin-left: 10%;
+}
+
+.profile-area .textbox {
+    width: 60%;
+    padding-right: 10%;
+}
+
+/*******************
+*  スキル
+*******************/
+
+.title-skill {
+    margin-top: 20%;
+    text-align: center;
+    font-size: 40px;
+}
+
+.skill-list {
+    width: 100%;
+    padding-left: 10%;
+    margin-top: 5%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(7, auto); /*縦7列*/
+    /*フェードする際に、透明な状態から始める*/
+    opacity: 0;
+}
+
+.skill {
+    width: 80%;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.skill img {
+    width: 100px;
+    height: 100px;
+}
+
+.skill-text {
+    width: 50%;
+}
+
+
+/*******************
+*  作品紹介
+*******************/
+
+.work-outer {
+    width: 100%; /*PC用*/
+    margin-top: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.textbox01 {
+    width: 30%;
+    height: 4%;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.textbox01 h2 {
+    text-align: center;
+    font-size: 70px;
+}
+
+.textImg {
+    width: 100%;
+    height: 100%;
+}
+
+.work-area {
+    width: 100%; /*PC用*/
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex; /*中身をflex指定*/
+    flex-direction: row; /*子を横に並べる*/
+    justify-content: space-around; /*左右の余白を均等割り*/
+
+    align-items: center;
+    overflow: hidden; /*はみ出した部分は隠す*/
+}
+
+.work-wrapper {
+    margin-top: 0px;
+    display: flex; /*中身をflex指定*/
+    animation-name: slideAnim; /*アニメーションの名前*/
+    animation-duration: 15s; /*アニメーションの一回分の長さ*/
+    animation-iteration-count: infinite; /*アニメーションループ [infinite:無限]*/
+    animation-timing-function: linear; /*アニメーションの進行具合を操作*/
+    animation-fill-mode: both; /*アニメーションの開始時と終了時の状態*/
+}
+
+.work-wrapper img {
+    width: 800px;
+    height: 440px;
+    margin-right: 150px;
+    margin-left: 150px;
+}
+
+@keyframes slideAnim {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateX(-100%); /*左へスライド*/
+    }
+}
+
+.textbox02 {
+    width: 40%;
+    height: 15%;
+    margin-top: 8%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.viewImg {
+    width: 100%;
+    height: 100%;
+}
+
+/*******************
+*  フッター
+*******************/
+.footer {
+    width: 100%;
+    margin-top: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #8F8C8C;
+}
+
+.footer img {
+    width: 20%;
+    height: 17%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+/*******************
+*  フェードの設定
+*******************/
+
+/* fadeUp */
+
+.CssfadeUp {
+    animation-name: fadeUpAnime; /*アニメーションの名前を設定*/
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0; /*透明*/
+}
+
+@keyframes fadeUpAnime {
+    from {
+        opacity: 0; /*透明*/
+        transform: translateY(100px); /*100px下から出現*/
+    }
+
+    to {
+        opacity: 1; /*不透明*/
+        transform: translateY(0); /*元の位置へ*/
+    }
+}
+
+/**********************************
+*   幅が狭まったときの処理
+**********************************/
+
+/*解像度①*/
+@media (max-width: 1000px) {
+    /*******************
+    *  見出し
+    *******************/
+    h1 {
+    }
+
+    .skill-list {
+        width: 100%;
+        padding-left: 10%;
+        margin-top: 5%;
+        display: grid;
+        grid-auto-flow: column;
+        /*フェードする際に、透明な状態から始める*/
+        opacity: 0;
+    }
+
+    .skill {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /*******************
+    *  作品紹介
+    *******************/
+    .work-outer {
+        width: 100%; /*PC用*/
+        margin-top: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+    }
+
+    .textbox01 h2 {
+        font-size: 50px;
+    }
+
+    .work-area {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex; /*中身をflex指定*/
+        flex-direction: row; /*子を横に並べる*/
+        justify-content: space-around; /*左右の余白を均等割り*/
+
+        align-items: center;
+        overflow: hidden; /*はみ出した部分は隠す*/
+    }
+
+    .work-wrapper {
+        margin-top: 0px;
+        display: flex; /*中身をflex指定*/
+        animation-name: slideAnim; /*アニメーションの名前*/
+        animation-duration: 15s; /*アニメーションの一回分の長さ*/
+        animation-iteration-count: infinite; /*アニメーションループ [infinite:無限]*/
+        animation-timing-function: linear; /*アニメーションの進行具合を操作*/
+        animation-fill-mode: both; /*アニメーションの開始時と終了時の状態*/
+    }
+
+    .work-wrapper img {
+        width: 600px;
+        height: 330px;
+        margin-right: 100px;
+        margin-left: 100px;
+    }
+
+    /*******************
+    *  フッター
+    *******************/
+    .footer {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #8F8C8C;
+    }
+
+    .footer img {
+        width: 25%;
+        height: 21%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+}
+
+@media (max-width: 900px) {
+
+    /*******************
+    *  見出し
+    *******************/
+    .title h1 {
+        font-size: 80px;
+    }
+
+    .title h2 {
+        font-size: 40px;
+    }
+
+    .skill {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/*解像度③*/
+@media (max-width: 576px) {
+    /*******************
+    *  見出し
+    *******************/
+    .title h1 {
+        font-size: 50px;
+    }
+
+    .title h2 {
+        font-size: 25px;
+    }
+
+    /*******************
+    *  作品紹介
+    *******************/
+    .work-outer {
+        width: 100%; /*PC用*/
+        margin-top: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+    }
+
+    .textbox01 h2 {
+        font-size: 30px;
+    }
+
+    .work-area {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex; /*中身をflex指定*/
+        flex-direction: row; /*子を横に並べる*/
+        justify-content: space-around; /*左右の余白を均等割り*/
+
+        align-items: center;
+        overflow: hidden; /*はみ出した部分は隠す*/
+    }
+
+    .work-wrapper {
+        margin-top: 0px;
+        display: flex; /*中身をflex指定*/
+        animation-name: slideAnim; /*アニメーションの名前*/
+        animation-duration: 15s; /*アニメーションの一回分の長さ*/
+        animation-iteration-count: infinite; /*アニメーションループ [infinite:無限]*/
+        animation-timing-function: linear; /*アニメーションの進行具合を操作*/
+        animation-fill-mode: both; /*アニメーションの開始時と終了時の状態*/
+    }
+
+    .work-wrapper img {
+        width: 380px;
+        height: 209px;
+        margin-right: 60px;
+        margin-left: 60px;
+    }
+
+    /*******************
+    *  フッター
+    *******************/
+    .footer {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #8F8C8C;
+    }
+
+    .footer img {
+        width: 30%;
+        height: 25.5%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+}

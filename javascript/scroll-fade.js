@@ -20,6 +20,16 @@ function fadeAnime() {
             $(this).addClass('CssfadeUp');// 画面内に入ったらCssfadeUpというクラス名を追記
         }
     });
+
+    // フェード
+    $('.certification-list').each(function () { //fadeUpTriggerというクラス名が
+        var elemPos = $(this).offset().top - 50;//要素より、50px上の
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        if (scroll >= elemPos - windowHeight) {
+            $(this).addClass('CssfadeUp');// 画面内に入ったらCssfadeUpというクラス名を追記
+        }
+    });
 }
 
 // 画面をスクロールをしたら動かしたい場合の記述

@@ -103,7 +103,7 @@ body {
 }
 
 /*******************
-*  スキル
+*  スキル・資格
 *******************/
 
 .title-skill {
@@ -119,6 +119,17 @@ body {
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: repeat(7, auto); /*縦7列*/
+    /*フェードする際に、透明な状態から始める*/
+    opacity: 0;
+}
+
+.certification-list {
+    width: 100%;
+    padding-left: 10%;
+    margin-top: 5%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(1, auto); /*縦7列*/
     /*フェードする際に、透明な状態から始める*/
     opacity: 0;
 }
@@ -139,7 +150,6 @@ body {
 .skill-text {
     width: 50%;
 }
-
 
 /*******************
 *  作品紹介
